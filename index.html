@@ -3,115 +3,143 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mampu Beli iPhone 18 Pro?</title>
+<title>Seberapa FOMO Lu Beli iPhone 18 Pro?</title>
 <style>
-:root{--bg:#f2f2f7;--card:#fff;--text:#000;--mut:#8e8e93;--acc:#007aff;--sep:rgba(60,60,67,.18);
+:root{--bg:#f2f2f7;--card:#fff;--text:#000;--mut:#8e8e93;--acc:#007aff;--sep:rgba(60,60,67,.18);--track:rgba(118,118,128,.18);
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--card:#1c1c1e;--text:#fff;--mut:#8e8e93;--acc:#0a84ff;--sep:rgba(84,84,88,.6)}}
-:root[data-theme="dark"]{--bg:#000;--card:#1c1c1e;--text:#fff;--mut:#8e8e93;--acc:#0a84ff;--sep:rgba(84,84,88,.6)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--card:#1c1c1e;--text:#fff;--acc:#0a84ff;--sep:rgba(84,84,88,.6);--track:rgba(118,118,128,.36)}}
+:root[data-theme="dark"]{--bg:#000;--card:#1c1c1e;--text:#fff;--acc:#0a84ff;--sep:rgba(84,84,88,.6);--track:rgba(118,118,128,.36)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;display:flex;justify-content:center;padding:32px 16px 40px;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;display:flex;justify-content:center;padding:28px 16px 40px;-webkit-font-smoothing:antialiased}
 .wrap{width:100%;max-width:440px}
-h1{font-size:2.1rem;font-weight:700;letter-spacing:-.03em;margin:8px 4px 2px}
-.sub{color:var(--mut);margin:0 4px 24px;font-size:1rem}
+h1{font-size:2rem;font-weight:700;letter-spacing:-.03em;margin:8px 4px 4px;line-height:1.15}
+.sub{color:var(--mut);margin:0 4px 22px}
+.top{display:flex;justify-content:space-between;align-items:center;height:28px;margin:0 4px 8px;color:var(--mut);font-size:.85rem}
+.top button{background:none;border:0;color:var(--acc);font-size:1rem;padding:0;cursor:pointer;font-family:inherit}
+.bar{height:4px;background:var(--track);border-radius:2px;margin:0 4px 22px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc);border-radius:2px;transition:width .3s}
+.q{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin:0 4px 16px;line-height:1.25}
 .group{background:var(--card);border-radius:12px;overflow:hidden}
-.row{display:flex;align-items:center;justify-content:space-between;padding:0 16px;min-height:48px;gap:12px}
-.row+.row{box-shadow:inset 0 .5px 0 var(--sep);margin-top:0}
-.row label{font-size:1.02rem;white-space:nowrap}
-.row .in{display:flex;align-items:center;flex:1;justify-content:flex-end;color:var(--mut)}
-.row .in span{margin-right:6px;font-size:1.02rem}
-input{border:0;outline:0;background:transparent;color:var(--acc);font-size:1.02rem;text-align:right;width:100%;max-width:170px;padding:13px 0;font-family:inherit;font-variant-numeric:tabular-nums}
-input::placeholder{color:var(--mut);opacity:.6}
-.seg{display:flex;background:rgba(118,118,128,.16);border-radius:10px;padding:2px;margin-bottom:16px}
-.seg button{flex:1;width:auto;background:transparent;color:var(--text);border-radius:8px;padding:8px 0;font-size:.9rem;font-weight:500}
-.seg button.on{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.18);font-weight:600}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seg button.on{background:#636366}}
-:root[data-theme="dark"] .seg button.on{background:#636366}
-.cap{color:var(--mut);font-size:.8rem;margin:8px 16px 22px}
-button{width:100%;border:0;border-radius:14px;background:var(--acc);color:#fff;font-size:1.06rem;font-weight:600;padding:15px;cursor:pointer;font-family:inherit;transition:opacity .15s,transform .1s}
-button:active{opacity:.75;transform:scale(.985)}
-#res{display:none;margin-top:22px;background:var(--card);border-radius:20px;padding:28px 22px;text-align:center;animation:pop .35s ease}
+.opt{display:flex;justify-content:space-between;align-items:center;width:100%;border:0;background:var(--card);color:var(--text);font:inherit;font-size:1.02rem;text-align:left;padding:15px 16px;cursor:pointer}
+.opt+.opt{box-shadow:inset 0 .5px 0 var(--sep)}
+.opt::after{content:"\203A";color:var(--mut);font-size:1.4rem;line-height:1}
+.opt:active,.opt.sel{background:var(--track)}
+.start{width:100%;border:0;border-radius:14px;background:var(--acc);color:#fff;font:inherit;font-size:1.06rem;font-weight:600;padding:15px;cursor:pointer;margin-top:8px}
+.start:active{opacity:.75}
+.fade{animation:pop .3s ease}
 @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-#emoji{font-size:3rem;line-height:1}
-#msg{font-size:1.15rem;font-weight:600;line-height:1.4;letter-spacing:-.01em;margin:14px 0 12px}
-#stat{font-size:.85rem;color:var(--mut);padding-top:12px;box-shadow:inset 0 .5px 0 var(--sep)}
-#buyBtn{margin-top:18px}
-#stores{margin-top:12px;background:var(--bg);text-align:left}
-#stores a{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;color:var(--acc);text-decoration:none;font-size:1.02rem}
-#stores a+a{box-shadow:inset 0 .5px 0 var(--sep)}
-#stores a:active{opacity:.6}
-#stores a::after{content:"\203A";color:var(--mut);font-size:1.3rem}
-.foot{color:var(--mut);font-size:.75rem;text-align:center;margin-top:24px}
+.res{background:var(--card);border-radius:20px;padding:22px 20px 24px;text-align:center}
+.gauge{width:100%;max-width:320px;margin:0 auto}
+.needle{transform-origin:120px 120px;transform:rotate(-90deg);transition:transform 1.8s cubic-bezier(.2,1.25,.4,1)}
+.num{font-size:2.8rem;font-weight:700;letter-spacing:-.03em;line-height:1;margin-top:-6px}
+.lvl{font-size:1.1rem;font-weight:600;margin:6px 0 2px}
+.badge{display:inline-block;font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:99px;margin:10px 0 12px}
+.msg{font-size:1.02rem;font-weight:600;line-height:1.45;letter-spacing:-.01em;margin:0}
+.puja{background:rgba(52,199,89,.16);color:#248a3d}.roast{background:rgba(255,59,48,.14);color:#d70015}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .puja{color:#30d158}:root:not([data-theme="light"]) .roast{color:#ff6961}}
+:root[data-theme="dark"] .puja{color:#30d158}:root[data-theme="dark"] .roast{color:#ff6961}
+.again{margin-top:14px}
+.tips{margin-top:18px;text-align:left}
+.tips h2{font-size:1.15rem;font-weight:700;letter-spacing:-.02em;margin:0 4px 10px}
+.tip{padding:13px 16px;background:var(--card)}
+.tip+.tip{box-shadow:inset 0 .5px 0 var(--sep)}
+.tip b{display:block;font-size:1rem;margin-bottom:3px}
+.tip span{color:var(--mut);font-size:.92rem;line-height:1.45;display:block}
+.tip.warn b{color:#d70015}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tip.warn b{color:#ff6961}}
+:root[data-theme="dark"] .tip.warn b{color:#ff6961}
+.al{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.al em{font-style:normal;font-weight:600;text-align:right;white-space:nowrap;color:var(--acc);font-size:.92rem;line-height:1.35}
+.tips h2.h2b{margin-top:20px}
+.note{color:var(--mut);font-size:.75rem;margin:8px 4px 0}
 </style>
 </head>
 <body>
-<div class="wrap">
-<h1>Seberapa kaya diri lu buat beli iPhone 18 Pro?</h1>
-<p class="sub">Mari berkhayal, siapa tau beneran punya iPhone 18 Pro</p>
-<div class="seg" id="seg"><button data-p="27499000" class="on">256 GB</button><button data-p="32999000">512 GB</button><button data-p="42999000">1 TB</button><button data-p="56999000">2 TB</button></div>
-<div class="group">
-<div class="row"><label for="gaji">Gaji / bulan</label><div class="in"><span>Rp</span><input id="gaji" inputmode="numeric" placeholder="5.000.000" autocomplete="off"></div></div>
-<div class="row"><label for="harga">Harga</label><div class="in"><span>Rp</span><input id="harga" inputmode="numeric" value="27.499.000" autocomplete="off"></div></div>
-</div>
-<p class="cap">Harga cuma perkiraan, boleh kamu ubah.</p>
-<button id="go">Hitung</button>
-<div id="res"><div id="emoji"></div><div id="msg"></div><div id="stat"></div>
-<button id="buyBtn" hidden>Gas beli</button>
-<div class="group" id="stores" hidden><a href="https://www.ibox.co.id" target="_blank" rel="noopener noreferrer">Beli di iBox</a><a href="https://www.digimap.co.id" target="_blank" rel="noopener noreferrer">Beli di Digimap</a><a href="https://hellostore.id" target="_blank" rel="noopener noreferrer">Beli di hello</a></div></div>
-<p class="foot">@ahasanhariri</p>
-</div>
+<div class="wrap" id="app"></div>
 <script>
-var JT=1e6,M=1e9,T=1e12;
-var tiers=[
-[0,1*JT,"😭",["Maaf, gajimu bahkan belum sampai Rp1 juta. Ini bukan miskin lagi, ini level bertahan hidup. Coba tanya pemerintah, mana 19 juta lapangan pekerjaan itu?", "Gaji segini mau beli iPhone 18 Pro? Beli casingnya aja lu harus nabung sampai lebaran.", "Saldo lu itu bukan buat ditabung, tapi buat dikenang. Mimpi boleh, checkout jangan dulu.", "Dompet lu lebih kosong dari janji kampanye. Beli gorengan dulu, iPhone-nya urusan reinkarnasi.", "Jarak lu ke iPhone 18 Pro lebih jauh daripada jarak lu ke bulan.", "Gaji lu belum sampai Rp1 juta. Coba tanya Wapres Gibran, mana 19 juta lapangan pekerjaan itu?", "Gaji segini, iPhone 18 Pro cuma mimpi. Daripada ngeluh di sini, tanya langsung ke Wapres Gibran soal janji 19 juta lapangan kerja itu."]],
-[1*JT,3*JT,"😢",["Maaf, kamu masih miskin. Coba tanya pemerintah, mana 19 juta lapangan pekerjaan itu?", "Miskin itu bukan aib, tapi ngarep iPhone 18 Pro dengan gaji segini itu halu level dewa.", "Gaji lu habis sebelum tanggal tua. iPhone 18 Pro cuma bisa lu lihat di Instagram orang.", "Lu harus nabung penuh bertahun-tahun, tanpa makan, tanpa kos, tanpa napas. Selamat berjuang.", "Kata motivator: berani bermimpi. Kata saldo lu: berani bohong.", "Upgrade skill dulu, bukan upgrade iPhone. HP lu yang layarnya retak itu masih bisa dipakai kok.", "Kamu masih miskin. Coba DM Wapres Gibran, tanyain mana 19 juta lapangan pekerjaan itu?", "Mau iPhone 18 Pro tapi gaji segini? Sana tanya Pak Wapres Gibran, janji 19 juta lapangan kerja itu yang mana ya?"]],
-[3*JT,5*JT,"😅",["Yah, kamu masih UMR Jakarta. Coba resign dan cari kerjaan yang bikin naik gaji.", "Gaji UMR tapi gaya flagship. Cicilan 0% itu bukan penyelamat, itu jebakan batman.", "Bos bilang gaji sesuai kontribusi. Berarti kontribusi lu sebanding sama casing iPhone-nya doang.", "Bisa kebeli kok, asal siap makan mie instan tiga tahun berturut-turut. Worth it? Pikir lagi.", "Naik gaji nggak datang dari doa doang. Update CV lu sana, yang terakhir diupdate zaman kuliah itu.", "Masih UMR Jakarta. Cari kerjaan yang gajinya naik, atau tanya Wapres Gibran soal janji 19 juta lapangan pekerjaan itu.", "Gaji UMR tapi gaya flagship. Sambil nabung, coba tanyakan ke Wapres Gibran, lapangan kerja yang 19 juta itu di mana ya?"]],
-[5*JT,7*JT,"🙂",["Lumayan lah, tapi masih kurang.", "Dikit lagi sultan. Dikit banget... dikalikan tiga.", "Gaji lu udah lumayan, tapi iPhone 18 Pro bilang: belum, bro, belum.", "Setengah jalan. Sisanya jalan kaki sambil nabung."]],
-[7*JT,10*JT,"😎",["Mantap! Gajimu sudah lumayan. Nabung dikit lagi, atau cicil 12 bulan tanpa drama, iPhone 18 Pro bisa jadi milikmu.", "Wih, gaji lu mulai berkilau! Dikit lagi iPhone 18 Pro mendarat di genggaman, tinggal tahan godaan checkout yang lain.", "Level lu sudah naik kelas! Tuhan, Apple, dan bank sepakat: lu layak punya iPhone 18 Pro.", "Gaji segini tandanya semesta mulai berpihak. Cicil sedikit, gaya selangit!"]],
-[10*JT,20*JT,"🤩",["Gaji double digit! Tinggal sisihkan beberapa bulan, atau pakai cicilan 0% dan kamu sudah bisa pamer unboxing.", "Double digit, bro! Kulkas, dompet, dan harga diri lu bersinar bareng. iPhone 18 Pro tinggal tunggu giliran.", "Gaji lu bikin ATM tersenyum. Beli iPhone 18 Pro itu bukan mimpi, tapi agenda bulan depan.", "Luar biasa! Lu bukan lagi pengagum iPhone, lu calon pemiliknya. Sebentar lagi unboxing viral!"]],
-[20*JT,50*JT,"💸",["Sekali gajian langsung bisa checkout iPhone 18 Pro, sisanya masih bisa buat beli casing dan makan enak.", "Satu kali gajian, satu iPhone 18 Pro, sisanya buat traktir temen. Lu emang pantas dipuja!", "Gaji lu bikin kasir toko iPhone berdiri hormat. Checkout aja, nggak usah mikir dua kali!", "Sultan muda terdeteksi! Dompet lu setebal brosur promo, dan iPhone 18 Pro cuma pemanasan."]],
-[50*JT,200*JT,"🤑",["Satu iPhone 18 Pro? Kamu bisa beli beberapa sekaligus, satu buat tiap hari kerja.", "Gaji lu gila-gilaan! Beli iPhone 18 Pro buat lu itu kayak beli permen di kasir.", "Lu bukan lagi konsumen, lu investor mood Apple. Beli lima pun saldo lu masih ketawa.", "Pelayan toko bakal panggil lu 'Kak' sambil nunduk 90 derajat. Gaji lu legendaris!"]],
-[200*JT,1*M,"🛥️",["Gaji segini, iPhone 18 Pro cuma receh. Warna apa yang kamu mau? Beli semua juga bisa.", "Gaji lu bikin iPhone 18 Pro kelihatan murah. Sekalian beli semua warna, semua kapasitas, lalu bagi-bagi ke tetangga.", "Lu sultan sejati! Orang lain nabung, lu tinggal swipe. Dunia memang indah buat lu.", "Gaji lu setara tsunami rezeki. iPhone 18 Pro? Itu cuma uang parkir lu bulan ini."]],
-[1*M,T,"🏝️",["Sultan terdeteksi. Kamu tinggal borong satu toko iPhone, atau beli sekalian pabriknya.", "Gaji lu miliaran! iPhone 18 Pro cuma kembalian, mending borong satu mal sekalian.", "Tuan Besar telah tiba! Apple Store bakal gelar karpet merah dan tepuk tangan buat lu.", "Lu bukan beli iPhone, lu cuma nyicipin. Gaji segini bikin Forbes sibuk ngetik nama lu."]],
-[T,Infinity,"🚀",["Gajimu triliunan. Apple sebaiknya nanya, kamu mau beli perusahaannya sekalian?", "Gaji triliunan! Lu nggak beli iPhone 18 Pro, lu yang menentukan harganya.", "Dewa rezeki hadir! Bumi berhenti berputar sebentar buat menyaksikan saldo lu.", "John Ternus nelpon lu langsung, minta saran strategi. Gaji lu kelas semesta!"]]
-];
-function num(s){return parseInt(String(s).replace(/\D/g,""),10)||0}
-function fmt(n){return n.toLocaleString("id-ID")}
-["gaji","harga"].forEach(function(id){
-var el=document.getElementById(id);
-el.addEventListener("input",function(){var n=num(el.value);el.value=n?fmt(n):""});
-});
-document.getElementById("seg").addEventListener("click",function(e){
-var b=e.target.closest("button");if(!b)return;
-document.querySelectorAll("#seg button").forEach(function(x){x.classList.remove("on")});
-b.classList.add("on");document.getElementById("harga").value=fmt(+b.dataset.p);
-});
-document.getElementById("harga").addEventListener("input",function(){
-document.querySelectorAll("#seg button").forEach(function(x){x.classList.remove("on")});
-});
-function hitung(){
-var g=num(document.getElementById("gaji").value),h=num(document.getElementById("harga").value)||27499000;
-var r=document.getElementById("res");
-if(!g){r.style.display="block";document.getElementById("emoji").textContent="🤔";document.getElementById("msg").textContent="Isi dulu gajinya, nanti dihitung.";document.getElementById("stat").textContent="";document.getElementById("buyBtn").hidden=true;document.getElementById("stores").hidden=true;return}
-var t=tiers.find(function(x){return g>=x[0]&&g<x[1]})||tiers[tiers.length-1];
-document.getElementById("emoji").textContent=t[2];
-var m=t[3];
-if(Array.isArray(m)){var k=t[0],n,last=window._last||{};do{n=Math.floor(Math.random()*m.length)}while(m.length>1&&n===last[k]);last[k]=n;window._last=last;m=m[n]}
-document.getElementById("msg").textContent=m;
-var b=h/g,txt;
-if(b<=1)txt="Harga iPhone = "+Math.round(b*100)+"% dari gaji sebulan";
-else if(b<24)txt="Butuh sekitar "+b.toFixed(1).replace(".",",")+" bulan gaji penuh (tanpa makan, tanpa kos)";
-else txt="Butuh sekitar "+(b/12).toFixed(1).replace(".",",")+" tahun gaji penuh (tanpa makan, tanpa kos)";
-document.getElementById("stat").textContent=txt;
-var ok=g>=7*JT;
-document.getElementById("buyBtn").hidden=!ok;
-document.getElementById("stores").hidden=true;
-r.style.display="block";
+var Q=[["Lu kerja apa?", [["Pelajar / mahasiswa", 8], ["Belum kerja", 9], ["Karyawan swasta", 4], ["Freelancer", 5], ["Pengusaha", 2]]], ["Umur lu berapa?", [["Di bawah 18", 8], ["18 - 24", 7], ["25 - 34", 5], ["35 - 44", 3], ["45 ke atas", 1]]], ["Gaji atau uang saku lu per bulan?", [["Di bawah Rp 3 juta", 9], ["Rp 3 - 5 juta", 7], ["Rp 5 - 10 juta", 5], ["Rp 10 - 25 juta", 3], ["Di atas Rp 25 juta", 1]]], ["Abis semua pengeluaran bulanan, sisa duit lu?", [["Abis, kadang minus", 9], ["Sisa dikit", 6], ["Sisa separuh gaji", 3], ["Sisa banyak", 1]]], ["Dana darurat lu berapa?", [["Nol, saldo cuma buat dikenang", 9], ["Kurang dari 3 bulan", 6], ["3 - 6 bulan", 3], ["Lebih dari 6 bulan", 1]]], ["HP lu sekarang gimana?", [["Baru beli tahun ini", 10], ["iPhone 17 series", 8], ["Lama tapi masih normal", 5], ["Layar retak, sering lag", 1]]], ["Alasan utama lu pengen beli?", [["Temen-temen pada beli", 10], ["Biar keliatan keren di sosmed", 9], ["Kameranya dan performanya", 3], ["Emang butuh banget", 1]]], ["Rencana bayar lu?", [["Paylater atau pinjol", 10], ["Cicilan 0%", 6], ["Nabung dulu", 2], ["Cash", 1]]], ["Seberapa sering lu nonton unboxing dan review?", [["Tiap hari sampe hafal", 9], ["Kadang-kadang", 5], ["Jarang banget", 1]]]];
+var T=[[["Lu \"{a}\" tapi gayanya udah kayak CEO unicorn. Tenang dulu, bestie.", "Status lu \"{a}\", tapi keinginan lu level direktur. Realita lagi nelpon, jangan di-reject."], ["Lu \"{a}\" dan keputusan lu mateng. Gue respect.", "Status lu \"{a}\" bikin rencana ini keliatan solid banget."]], [["Umur lu \"{a}\", mood lu masih gampang kebawa tren. Awas jadi korban hype.", "Di umur \"{a}\", harusnya lu mikirin masa depan, bukan checkout jam 2 pagi."], ["Umur lu \"{a}\", udah paham mana butuh mana gaya. Dewasa banget.", "Di umur \"{a}\", lu udah ngerti nilai duit. Salut."]], [["Gaji lu \"{a}\", tapi mau beli iPhone 27 jutaan? Matematika lu lagi ngaco.", "Penghasilan lu \"{a}\", tapi masih berani lirik iPhone 18 Pro. Mental baja, dompet kertas."], ["Penghasilan lu \"{a}\", jadi iPhone ini bukan beban. Aman jaya.", "Gaji lu \"{a}\", dompet lu kuat. Checkout tanpa deg-degan."]], [["Sisa duit bulanan lu \"{a}\". Terus duit buat iPhone-nya dari mana, dari doa?", "Sisa duit bulanan lu \"{a}\", tapi pengen flagship. Itu bukan rencana, itu fantasi."], ["Sisa duit bulanan lu \"{a}\", cashflow lu sehat parah.", "Dengan sisa \"{a}\" tiap bulan, lu emang disiplin. Respect."]], [["Dana darurat lu \"{a}\". Kalau besok ada apa-apa, lu bakal jual iPhone-nya sendiri.", "Tabungan lu \"{a}\", tapi pengen iPhone. Gaya sultan, safety net tipis."], ["Dana darurat lu \"{a}\", jadi aman kalau ada apa-apa. Lu emang bijak.", "Tabungan lu \"{a}\", lu siap secara mental dan finansial."]], [["HP lu \"{a}\", tapi tetep gatel mau ganti. Itu bukan butuh, itu hobi bakar duit.", "Lu masih pegang HP \"{a}\" dan udah mau ganti lagi. Apple seneng banget punya lu."], ["HP lu \"{a}\", jadi upgrade lu masuk akal banget.", "Dengan kondisi HP \"{a}\", ganti iPhone itu valid, bukan impulsif."]], [["Alasan lu: \"{a}\". Itu bukan alasan, itu validasi dari orang lain.", "Lu beli karena \"{a}\"? Sampai kapan hidup lu diatur timeline orang?"], ["Alasan lu \"{a}\", jelas dan masuk akal. Bukan sekadar ikut-ikutan.", "Lu beli karena \"{a}\", alasan yang bikin gue angguk-angguk."]], [["Bayar pake \"{a}\"? Itu bukan beli HP, itu beli masalah bulanan.", "Rencana bayar lu \"{a}\". Hati-hati, bunga lebih setia nagih daripada gebetan lu."], ["Bayar pake \"{a}\", strategi pinter dan nggak bikin pusing.", "Rencana bayar lu \"{a}\", keuangan lu aman terkendali."]], [["Nonton unboxing \"{a}\", pantes otak lu udah dicuci algoritma.", "Lu nonton review \"{a}\". Itu bukan riset, itu doomscrolling berkedok edukasi."], ["Nonton unboxing \"{a}\", lu nggak gampang termakan hype. Kepala dingin banget.", "Lu nonton review \"{a}\", jadi keputusan lu bukan hasil brainwash algoritma."]]];
+var OP=[["Gila, lu anti-FOMO banget. Gue salut.", "W banget, ini definisi orang waras di era hype."], ["Not bad, lu masih waras di tengah hype.", "Vibes lu stabil, FOMO lu cuma nyempil dikit."], ["Hmm, gue mulai nyium bau FOMO nih.", "Lu belum parah, tapi udah mulai gatel."], ["Bestie, ini FOMO parah sih, jujur aja.", "Gue nggak tega, tapi lu emang FOMO banget."], ["MELEDAK! Meteran lu jebol, lu FOMO akut!", "Alarm bunyi! Lu udah level korban marketing."]],CL=[["Beli aja, lu pantes dapet W.", "Lanjut checkout, no cap."], ["Beli aja, tapi tetep pake akal sehat ya.", "Lu aman, gas dengan kepala dingin."], ["Tahan seminggu dulu, kalau masih pengen baru gas.", "Cek dompet dulu sebelum jari lu bertindak."], ["Taruh HP-nya dulu, tarik napas, baru mikir lagi.", "Dompet lu pengen ngomong sesuatu, dengerin dulu deh."], ["Tutup app-nya sekarang. Gue serius, dompet lu butuh tolong.", "Skip dulu iPhone-nya, healing aja sana. Dompet lu butuh dipeluk."]];
+var L=[["Anti-FOMO Sejati", "puja"], ["Masih Waras", "puja"], ["Mulai Gatel", "roast"], ["FOMO Parah", "roast"], ["FOMO Akut (Kritis)", "roast"]];
+Q=Q.concat([["Seberapa sering lu pamer atau check-in di sosmed?", [["Tiap hari, wajib IG story", 9], ["Seminggu sekali", 5], ["Jarang, lebih sering lurking", 2], ["Sosmed gue sepi dan gue damai", 1]]], ["Temen ngajak nongkrong di kafe hits, lu?", [["Wajib ikut walau lagi bokek", 9], ["Ikut kalau ada budget", 5], ["Skip, mending nabung", 1]]], ["Jajan kopi dan nongkrong lu per bulan?", [["Lebih dari Rp 1,5 juta", 9], ["Rp 500 ribu - 1,5 juta", 6], ["Di bawah Rp 500 ribu", 2]]], ["Pas lihat orang konser, liburan, atau pamer barang baru, lu ngerasa?", [["Panas dan pengen nyusul", 10], ["Iri dikit, abis itu lupa", 5], ["Bodo amat, urusan masing-masing", 1]]], ["Lu checkout tengah malam pas flash sale atau tanggal kembar?", [["Sering banget, keranjang kuning aman", 9], ["Kadang kalau ada voucher", 5], ["Hampir nggak pernah", 1]]], ["Langganan bulanan lu (Netflix, Spotify, dll)?", [["Banyak, sebagian lupa dibatalin", 8], ["Dua tiga yang beneran dipake", 4], ["Nggak ada atau patungan", 1]]]]);
+T=T.concat([[["Lu \"{a}\". Hidup lu kebanyakan buat konten, dompet lu yang jadi korbannya.", "Pamer \"{a}\"? Followers nggak bakal bayarin cicilan lu."], ["Sosmed lu \"{a}\", lu hidup buat diri sendiri, bukan buat feed.", "Dengan pola \"{a}\", lu nggak gampang ke-trigger pamer. Keren."]], [["Soal nongkrong lu jawab \"{a}\". Dompet lu ikut tongkrongan, saldo lu nggak diundang.", "\"{a}\" itu bukan solidaritas, itu bayar gengsi pake duit sendiri."], ["Nongkrong \"{a}\", lu tau prioritas. Circle sehat, dompet sehat.", "Lu milih \"{a}\", bukti lu bisa bilang nggak tanpa baper."]], [["Jajan lu \"{a}\" sebulan. Kopi lu lancar, tabungan lu yang kering.", "Jajan dan nongkrong \"{a}\" per bulan, itu udah cukup buat nyicil gengsi lu."], ["Jajan lu \"{a}\" per bulan, terkontrol banget.", "Budget jajan \"{a}\", lu bisa nikmatin hidup tanpa bocor halus."]], [["Lihat orang pamer, lu \"{a}\". Padahal yang lu liat cuma highlight, bukan kenyataan.", "Reaksi lu \"{a}\". Hidup orang di feed itu kurasi, bestie."], ["Reaksi lu \"{a}\", mental lu kuat nggak gampang kebakar.", "Lu \"{a}\" liat orang pamer, JOMO banget dan gue suka."]], [["Checkout tengah malam \"{a}\". Itu bukan belanja, itu sesi mabuk diskon jam 2 pagi.", "Flash sale \"{a}\"? Tanggal kembar nggak bikin lu hemat, cuma bikin lu belanja."], ["Checkout tengah malam \"{a}\", lu kebal sama jebakan flash sale.", "Lu \"{a}\" soal flash sale, disiplin tingkat dewa."]], [["Langganan lu \"{a}\". Uang kecil yang bocor tiap bulan itu gede kalau dijumlah.", "Langganan \"{a}\", Netflix lu aja lebih rutin dibayar daripada tabungan."], ["Langganan lu \"{a}\", pengeluaran rutin lu rapi.", "Dengan langganan \"{a}\", lu nggak bocor halus. Pinter."]]]);
+var app=document.getElementById("app"),i=-1,ans=[],lab=[],idx=[];
+function rnd(a){return a[Math.floor(Math.random()*a.length)]}
+function score(){var b=ans.reduce(function(x,y){return x+y},0)/ans.length*10;
+if(ans[2]>=7&&ans[7]>=6)b+=6;if(ans[4]<=3&&ans[3]<=3)b-=5;
+b+=Math.random()*8-4;return Math.max(0,Math.min(100,Math.round(b)))}
+var MID=[2e6,4e6,7.5e6,17.5e6,35e6];
+function tips(){
+var mo=Math.ceil(27499000/(MID[idx[2]]*.2)),w=mo>=24?(mo/12).toFixed(1).replace(".",",")+" tahun":mo+" bulan";
+function r(t,x,c){return'<div class="tip'+(c?' warn':'')+'"><b>'+t+'</b><span>'+x+'</span></div>'}
+var h='<div class="tips fade"><h2>Biar nggak kemakan gengsi</h2><div class="group">';
+if(ans[7]>=6)h+=r('Stop dulu, jangan pake '+lab[7].toLowerCase(),'Beli HP pake utang konsumtif bikin total yang lu bayar lebih gede dari harga aslinya. Gengsi sebulan, nyicil berbulan-bulan.',1);
+h+=r('Nabung dulu, baru checkout','Sisihin 20-30% tiap gajian ke rekening terpisah, kalau bisa otomatis. Itung kasar: nabung 20% dari gaji, lu butuh sekitar '+w+' buat ngumpulin iPhone 18 Pro 256 GB (Rp 27.499.000). Versi Pro Max biasanya lebih mahal lagi.');
+h+=r('Amanin dana darurat dulu','Minimal 3 bulan pengeluaran. HP itu keinginan, dana darurat itu kebutuhan.');
+h+=r('Jurus tahan 30 hari','Pengen banget? Tahan sebulan. Kalau masih pengen, berarti itu bukan sekadar FOMO.');
+h+=r('Kalau terpaksa nyicil','Patokan umum, total cicilan nggak lebih dari 30% penghasilan. Jangan pernah pinjol ilegal, pastiin yang berizin OJK.');
+return h+'</div><p class="note">Panduan umum, bukan saran keuangan profesional. Harga acuan bisa berubah.</p></div>'}
+function rp(n){return"Rp "+(Math.round(n/50000)*50000).toLocaleString("id-ID")}
+function invest(){
+var cap=MID[idx[2]]*[0,.1,.25,.35][idx[3]],d=idx[4],young=idx[1]<=2,debt=ans[7]>=6;
+function R(t,x,c){return'<div class="tip'+(c?' warn':'')+'"><b>'+t+'</b><span>'+x+'</span></div>'}
+function A(n,p,w){return'<div class="tip al"><div><b>'+n+'</b><span>'+w+'</span></div><em>'+p+'%<br>'+rp(cap*p/100)+'</em></div>'}
+var h='<div class="tips fade"><h2>Arah investasi buat lu</h2><div class="group">',apps=[];
+if(debt)h+=R('Utang konsumtif dulu','Kalau lu lagi nyicil atau pake paylater, lunasin dulu. Bunganya biasanya lebih gede dari cuan investasi.',1);
+if(idx[3]==0){
+h+=R('Rapihin cashflow dulu','Sisa duit lu abis, belum saatnya investasi. Catat semua pengeluaran sebulan, potong jajan impulsif dan langganan yang jarang dipake, targetin sisa minimal 10% gaji.');
+h+=R('Kalau udah ada sisa','Mulai dari tabungan terpisah atau reksa dana pasar uang dengan nominal kecil. Konsisten lebih penting daripada gede.');
+}else{
+var mo=Math.ceil(27499000/cap),w=mo>=24?(mo/12).toFixed(1).replace(".",",")+" tahun":mo+" bulan";
+h+=R('Kapasitas nabung lu','Dari gaji dan sisa duit lu, kira-kira '+rp(cap)+' per bulan. Kalau semuanya buat iPhone 18 Pro 256 GB (Rp 27.499.000), kekumpul sekitar '+w+'.');
+if(d<=1){h+=R('Prioritas: dana darurat','Kumpulin '+(d==0?'dari nol sampai':'sampai')+' 3-6 bulan pengeluaran dulu, pilih yang gampang dicairin dan risikonya rendah.');
+h+=A('Reksa dana pasar uang',60,'Likuid dan risikonya relatif rendah.')+A('Tabungan atau deposito',40,'Aman buat dana yang harus siap dipake.');apps=[["Bibit","Reksa dana dan SBN, ramah buat pemula."],["Bareksa","Reksa dana, SBN, dan emas dalam satu aplikasi."]]}
+else if(d==2){h+=R('Dana darurat lu hampir aman','Boleh mulai nambah instrumen jangka menengah, sambil tetep jaga dana daruratnya.');
+h+=A('Reksa dana pasar uang',30,'Buat dana yang masih butuh likuid.')+A('SBN ritel atau reksa dana pendapatan tetap',40,'Imbal hasil lebih stabil buat jangka menengah.')+A('Emas',30,'Buat lindung nilai jangka panjang.');apps=[["Bibit","Reksa dana dan SBN."],["Bareksa","Reksa dana, SBN, dan emas."],["Pluang","Buat nabung emas."]]}
+else{h+=R('Fondasi lu udah kuat','Dana darurat aman, jadi lu bisa mulai porsi yang lebih agresif'+(young?', apalagi umur lu masih panjang buat nunggu hasilnya.':', tapi tetep sesuaikan sama toleransi risiko lu.'));
+var s1=young?45:30;h+=A('Reksa dana pasar uang',10+(young?0:5),'Buat dana siap pakai.')+A('SBN atau reksa dana pendapatan tetap',young?25:35,'Penyeimbang risiko.')+A('Emas',20,'Lindung nilai.')+A('Reksa dana indeks atau saham',s1,'Buat jangka panjang, nilainya bisa naik turun.');
+apps=[["Bibit","Reksa dana dan SBN."],["Bareksa","Reksa dana, SBN, dan emas."],["Ajaib","Reksa dana dan saham."],["Stockbit","Saham, plus komunitas buat belajar."],["Pluang","Buat nabung emas."]]}
 }
-document.getElementById("buyBtn").addEventListener("click",function(){var st=document.getElementById("stores");st.hidden=!st.hidden});
-document.getElementById("go").addEventListener("click",hitung);
-document.getElementById("gaji").addEventListener("keydown",function(e){if(e.key==="Enter")hitung()});
+h+='</div>';
+if(apps.length){h+='<h2 class="h2b">Aplikasi yang bisa lu cek</h2><div class="group">';apps.forEach(function(a){h+=R(a[0],a[1])});h+='</div>'}
+return h+'<p class="note">Contoh alokasi, bukan saran investasi atau keuangan profesional. Semua investasi ada risikonya dan nilainya bisa turun. Fitur aplikasi bisa beda dan berubah, cek langsung di aplikasinya dan pastiin berizin OJK.</p></div>'}
+function compose(li){var roast=li>=2,ix=ans.map(function(p,k){return[k,p+Math.random()*1.5]});
+ix.sort(function(a,b){return roast?b[1]-a[1]:a[1]-b[1]});
+var parts=[rnd(OP[li])];
+ix.slice(0,2).forEach(function(x){parts.push(rnd(T[x[0]][roast?0:1]).replace("{a}",lab[x[0]]))});
+parts.push(rnd(CL[li]));return parts.join(" ")}
+function pt(a,r,deg){var t=deg*Math.PI/180;return(120+r*Math.cos(t)).toFixed(1)+" "+(120-r*Math.sin(t)).toFixed(1)}
+function arc(s){var a=180-s*45,b=a-45-(s<3?1.5:0);return"M"+pt(0,90,a)+" A90 90 0 0 1 "+pt(0,90,b)}
+function home(){
+i=-1;ans=[];lab=[];idx=[];
+app.innerHTML='<div class="fade"><h1>Seberapa FOMO lu beli iPhone 18 Pro?</h1><p class="sub">Jawab '+Q.length+' pertanyaan dengan jujur. Ujungnya cuma dua: dipuja atau di-roasting.</p><button class="start" id="go">Gas mulai</button></div>';
+document.getElementById("go").onclick=function(){i=0;show()};
+}
+function show(){
+var q=Q[i];
+var h='<div class="fade"><div class="top"><span>'+(i>0?'<button id="bk">‹ Kembali</button>':'')+'</span><span>'+(i+1)+' dari '+Q.length+'</span></div><div class="bar"><i style="width:'+(i/Q.length*100)+'%"></i></div><p class="q">'+q[0]+'</p><div class="group">';
+q[1].forEach(function(o,k){h+='<button class="opt" data-k="'+k+'">'+o[0]+'</button>'});
+app.innerHTML=h+'</div></div>';
+document.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){
+b.classList.add("sel");ans[i]=Q[i][1][+b.dataset.k][1];lab[i]=Q[i][1][+b.dataset.k][0];idx[i]=+b.dataset.k;
+setTimeout(function(){i++;i<Q.length?show():result()},170)}});
+var bk=document.getElementById("bk");if(bk)bk.onclick=function(){i--;show()};
+}
+function result(){
+var s=score();
+var li=s<20?0:s<40?1:s<60?2:s<80?3:4,lv=L[li],m=compose(li);
+var cols=["#34c759","#ffd60a","#ff9f0a","#ff3b30"],segs="";
+for(var k=0;k<4;k++)segs+='<path d="'+arc(k)+'" fill="none" stroke="'+cols[k]+'" stroke-width="16"/>';
+var ticks="";for(var k=0;k<=10;k++){var d=180-k*18;ticks+='<line x1="'+pt(0,74,d).split(" ")[0]+'" y1="'+pt(0,74,d).split(" ")[1]+'" x2="'+pt(0,68,d).split(" ")[0]+'" y2="'+pt(0,68,d).split(" ")[1]+'" stroke="var(--mut)" stroke-width="1.5"/>'}
+app.innerHTML='<div class="fade res"><svg class="gauge" viewBox="0 0 240 140" role="img" aria-label="Meteran FOMO">'+segs+ticks+'<text x="20" y="136" font-size="10" fill="var(--mut)" text-anchor="middle">JOMO</text><text x="220" y="136" font-size="10" fill="var(--mut)" text-anchor="middle">FOMO</text><g class="needle" id="nd"><line x1="120" y1="120" x2="120" y2="42" stroke="var(--text)" stroke-width="3" stroke-linecap="round"/></g><circle cx="120" cy="120" r="8" fill="var(--text)"/><circle cx="120" cy="120" r="3" fill="var(--card)"/></svg><div class="num" id="n">0</div><div class="lvl">'+lv[0]+'</div><span class="badge '+lv[1]+'">'+(lv[1]=="puja"?"Dipuja 👏":"Diroasting 🔥")+'</span><p class="msg">'+m+'</p></div>'+tips()+invest()+'<button class="start again" id="re">Ulangi</button>';
+document.getElementById("re").onclick=home;
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.getElementById("nd").style.transform="rotate("+(-90+s*1.8)+"deg)"})});
+var t0=null,n=document.getElementById("n");
+function tick(t){if(!t0)t0=t;var p=Math.min((t-t0)/1500,1);n.textContent=Math.round(s*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)}
+requestAnimationFrame(tick);
+}
+home();
 </script>
 </body>
 </html>
