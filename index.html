@@ -49,6 +49,7 @@ h1{font-size:2rem;font-weight:700;letter-spacing:-.03em;margin:8px 4px 4px;line-
 .fr{transform:translateZ(7px);background:#000;padding:4px;box-shadow:inset 0 0 0 2px var(--c1)}
 .scr{width:100%;height:100%;border-radius:27px;background:linear-gradient(180deg,#3a0f1a,#5c1e2d);position:relative;overflow:hidden;color:#fff;text-align:center}
 .isl{position:absolute;top:9px;left:50%;width:44px;height:13px;border-radius:9px;background:#000;transform:translateX(-50%)}
+.dt{position:absolute;top:40px;width:100%;font-size:.8rem;font-weight:600;opacity:.92}
 .clk{position:absolute;top:56px;width:100%;font-size:2.6rem;font-weight:700;letter-spacing:-.04em}
 .tg{position:absolute;bottom:24px;width:100%;font-size:.8rem;opacity:.92}
 .bk{transform:translateZ(-7px) rotateY(180deg);background:linear-gradient(145deg,var(--c2),var(--c1))}
@@ -98,12 +99,13 @@ var CL4=[["Burgundy","#4f1a28","#74303f"],["Biru","#1f3a5f","#4a79b8"],["Oranye"
 var rx=-8,ry=-25,vx=0,vy=0,drag=false,lx=0,ly=0,idle=Date.now(),loop=false,still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
 function clock(){var d=new Date();return d.getHours()+":"+("0"+d.getMinutes()).slice(-2)}
 var WP='<svg class="wp" viewBox="0 0 142 310" preserveAspectRatio="none" fill="none" stroke="#ffa0b4" stroke-width="1.6" stroke-opacity=".75"><path d="M142 78H98Q74 78 74 100Q74 122 98 122H142"/><path d="M0 130H62Q96 130 96 158Q96 186 62 186H0"/><path d="M142 196H98Q74 196 74 218Q74 240 98 240H142"/><path d="M0 248H62Q96 248 96 274Q96 300 62 300H0"/></svg>';
+function dstr(){try{return new Date().toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long"})}catch(e){return""}}
 function phoneHTML(){var sl="",sw="",pl="";for(var z=-11;z<=-8;z++)pl+='<div class="pl" style="transform:translateZ('+z+'px)"></div>';for(var k=-6;k<=6;k++)sl+='<div class="sl" style="transform:translateZ('+k+'px)"></div>';
 CL4.forEach(function(c,n){sw+='<button aria-label="'+c[0]+'" data-n="'+n+'" class="'+(n?'':'on')+'" style="background:linear-gradient(135deg,'+c[2]+','+c[1]+')"></button>'});
-return'<div class="scene" id="sc"><div class="phone" id="ph">'+sl+'<div class="fr"><div class="scr">'+WP+'<div class="isl"></div><div class="clk" id="clk">'+clock()+'</div><div class="tg">lu FOMO, kan?</div></div></div><div class="bk"><div class="lp"><i class="lg"></i></div></div><div class="pg">'+pl+'<div class="pt"><b class="ln" style="left:11px;top:11px"></b><b class="ln" style="left:51px;top:30px"></b><b class="ln" style="left:11px;top:50px"></b><i class="fl"></i><i class="mc"></i><i class="ld"></i></div></div></div></div><div class="sw">'+sw+'</div><p class="hint">Geser buat muterin iPhone 18 Pro.</p>'}
+return'<div class="scene" id="sc"><div class="phone" id="ph">'+sl+'<div class="fr"><div class="scr">'+WP+'<div class="isl"></div><div class="dt" id="dt">'+dstr()+'</div><div class="clk" id="clk">'+clock()+'</div><div class="tg">lu FOMO, kan?</div></div></div><div class="bk"><div class="lp"><i class="lg"></i></div></div><div class="pg">'+pl+'<div class="pt"><b class="ln" style="left:11px;top:11px"></b><b class="ln" style="left:51px;top:30px"></b><b class="ln" style="left:11px;top:50px"></b><i class="fl"></i><i class="mc"></i><i class="ld"></i></div></div></div></div><div class="sw">'+sw+'</div><p class="hint">Geser buat muterin iPhone 18 Pro.</p>'}
 function spin(){var ph=document.getElementById("ph");if(!ph){loop=false;return}
 if(!drag){if(Math.abs(vx)>.05||Math.abs(vy)>.05){ry+=vx;rx+=vy;vx*=.94;vy*=.94}else if(!still&&Date.now()-idle>2000)ry+=.5}
-var ck=document.getElementById("clk");if(ck){var t=clock();if(ck.textContent!==t)ck.textContent=t}
+var ck=document.getElementById("clk");if(ck){var t=clock();if(ck.textContent!==t)ck.textContent=t;var dd=document.getElementById("dt"),ds=dstr();if(dd&&dd.textContent!==ds)dd.textContent=ds}
 rx=Math.max(-45,Math.min(45,rx));
 ph.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";requestAnimationFrame(spin)}
 function bind(){var sc=document.getElementById("sc"),ph=document.getElementById("ph");
